@@ -1,10 +1,7 @@
-# Cofiguración de Ansible
+## ANSIBLE 101
 
-## Primer paso, instalación de los servidores web y de archivos.
+## GUIA DE INSTALACION SERVIDORES WEB
 
-para instalar apache2 en el server01 usamos 
- ansible-playbook -i ../hosts webserver.yml
+1. Instalacion de apache USAR --->> ansible-playbook -i ../hosts webserver.yml {SERVER01}
  
- instalar mysq en el contenedor server02 usamos 
- 
- ansible-playbook -i ../hosts sql.yml
+2. Instalacion de MySql  USAR --->> ansible-playbook -i ../hosts sql.yml {SERVER02}
