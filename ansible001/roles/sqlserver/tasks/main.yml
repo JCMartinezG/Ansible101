@@ -1,0 +1,20 @@
+---
+- name:  Install MariaDB server package
+  apt: name=mariadb-server state=present
+
+- name:  Start Mysql Service
+  service: name=mysql state=started enabled=true
+
+- name: Install python Mysql package
+  apt: name=python-mysqldb state=present
+
+- name: Install mysql extension for php
+  apt: name = {{item}} state:present
+  with_items:
+    - php5-mysql
+
+- name:  Create a new database
+  mysql_db: name={{nomdb}} state=present collation=utf8_general_ci
+
+- name:  Create a database user
+  mysql_user: name={{myname}} password={{mypass}} priv=*.*:ALL host=localhost state=present
